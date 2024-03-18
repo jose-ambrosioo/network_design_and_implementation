@@ -80,7 +80,6 @@ The floor plan is essential so that I can have the correct basis for carrying ou
 
 
 5. Addressing table
-Addressing table
 ![04](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/3d059d3f-4910-4d54-8567-281bb332795c)
 
 LAN A, B and C addressing table with IP 172.31.0.0/18
