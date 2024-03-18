@@ -134,6 +134,10 @@ In this project, we will configure an unencrypted GRE VPN point-to-point tunnel 
 
 
 8. Task
+Step 1: We wired a network in a similar way to the one in the topology diagram.
+Step 2: We erased all existing settings on the routers.
+Task 2: We performed basic device configurations. We configure the MATRIZ, MATRIZ A, MATRIZ B, and MATRIZ C routers and the S1, S2, S3, S4, S5 and ISP1 and ISP2 switches according to the following guidelines:
+
 • We configure the hostname on the equipment with the following commands:
 >en
 #conf t
@@ -304,9 +308,3 @@ ip nat outside
 #wr
 •    Configure DNS and register hosts in MATRIZ
 •    Configure PPPoE from ISP2 to BRANCH C
-
-
-
-Step 1: We wired a network in a similar way to the one in the topology diagram.
-Step 2: We erased all existing settings on the routers.
-Task 2: We performed basic device configurations. We configure the MATRIZ, MATRIZ A, MATRIZ B, and MATRIZ C routers and the S1, S2, S3, S4, S5 and ISP1 and ISP2 switches according to the following guidelines:
