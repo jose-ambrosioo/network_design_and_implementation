@@ -230,54 +230,54 @@ GIGABYTE -> on routers and switches
 #end
 #wr  
 •    Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
-Matriz 
+Head Office 
 #conf t
 #interface tunnel 1
 #ip add x.x.x.x y.y.y.y
 #tunnel destination x.x.x.x
 #tunnel source x.x.x.x
 #ip route x.x.x.x y.y.y.y x.x.x.x
-Filial A
+Branch A
 #conf t
 #interface tunnel 1
 #ip add x.x.x.x y.y.y.y
 #tunnel destination x.x.x.x
 #tunnel source x.x.x.x
 #ip route x.x.x.x y.y.y.y x.x.x.x
-Matriz 
+Head Office 
 #Conf t
 #Router eigrp 20
 #Network x.x.x.x
 #network x.x.x.x
 #no auto-summary
-Filial A
+Branch A
 #Conf t
 #Router eigrp 20
 #Network x.x.x.x
 #network x.x.x.x
 #no auto-summary
 •    Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
-Filial A
+Branch A
 #conf t
 #interface tunnel 1
 #ip add x.x.x.x y.y.y.y
 #tunnel destination x.x.x.x
 #tunnel source x.x.x.x
 #ip route x.x.x.x y.y.y.y x.x.x.x
-Filial B
+Branch B
 #conf t
 #interface tunnel 1
 #ip add x.x.x.x y.y.y.y
 #tunnel destination x.x.x.x
 #tunnel source x.x.x.x
 #ip route x.x.x.x y.y.y.y x.x.x.x
-Filial A
+Branch A
 #Conf t
 #Router eigrp 20
 #Network x.x.x.x
 #network x.x.x.x
 #no auto-summary
-Filial B
+Branch B
 #Conf t
 #Router eigrp 20
 #Network x.x.x.x
