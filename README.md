@@ -5,20 +5,20 @@ Design and implementation of a company's network project. Equipment: Routers, Sw
 
 1. Introduction
 
-In this project we will simulate a commercial company in the car sales sector that went through an expansion process, where there was a need for computerization and interconnection of the headquarters and 3 branches via the Internet.
+In this project, a commercial company in the car sales sector needed to expand. The headquarters and three branches needed to be computerized and interconnected via the Internet.
 
 
 2. Description
 
-The office, which previously had only the head office consisting of a sales station, with 1 manager, 1 cashier assistant and 1 junior IT technician and had only 3 computers with 2 deskjet printers and a single Internet access, via dial-up line ( 256 Kbps), now consists of a head office and three branches.
+The office, which previously had only the head office consisting of a sales station, with one manager, one cashier assistant and one junior IT technician, had only three computers with two Deskjet printers and single Internet access via dial-up line ( 256 Kbps), now consists of a head office and three branches.
 
-With the expansion process, there was also a need to hire staff. Hiring 1 Senior Technician (IT Administrator) for the company in general and hiring and moving 3 junior technicians (IT), 3 computer operators/webmaster and 3 managers for branches.
+With the expansion process, there was also a need to hire staff. We hired and moved one Senior Technician (IT Administrator) for the company in general, three junior technicians (IT), three computer operators/webmasters, and three managers for branches.
 
-Therefore, the head office was now composed of 1 Senior Technician, 1 junior technician, 1 computer operator/webmaster and 1 secretary. The branches were composed of 1 senior technician(2), 1 computer operator/webmaster, 1 secretary .
+Therefore, the head office was now composed of one Senior Technician, one junior technician, one computer operator/webmaster, and one secretary. The branches were composed of one senior technician(2), one computer operator/webmaster, and one secretary.
 
-The company's Management requested a project to implement tunnels between branches that would meet the company's needs, in order to have the best possible cost-benefit ratio. It was also informed that it must be possible to communicate via low-cost telephone and video conference.
+The company's Management requested a project to implement tunnels between branches that would meet the company's needs and have the best possible cost-benefit ratio. It was also informed that it must be possible to communicate via low-cost telephone and video conference.
 
-The main office is located in “city Y” and the branches in the Technical Administrative center of “city X”. Based on this information, the proposal for the implementation of the “TELECOM Project 2018” was presented, as follows.
+The main office is located in “City Y,” and the branches are in the Technical Administrative Center of “City X.” Based on this information, the proposal for implementing the “TELECOM Project 2018” was presented as follows.
 
 2.1 Company situation
 
@@ -61,17 +61,17 @@ ISP2:
 3. Physical and logical structure of the network
 3.1 Physical structure
 
-Below we will have the drawing of the physical topology of the network that will show us a true appearance or layout of the network. It will represent to us how the networks are connected, and the means of connecting the devices. The way the cables are connected will influence several points considered critical, such as flexibility, speed, and security. We use the Microsoft Visio 2016 tool.
+Below, I have a drawing of the network's physical topology that will show us its true appearance or layout. It will represent how the networks are connected and the means of connecting the devices. The cables' connection will influence several critical points, such as flexibility, speed, and security. I use the Microsoft Visio 2016 tool.
  
 3.1 Logical structure
 
-Logical topology refers to the way in which signals act on network media, or the way in which data is transmitted over the network from one device to another without taking into account the physical interconnection of the devices. They are often associated with Media Access Control, methods and protocols. These topologies are capable of being dynamically reconfigured by special types of equipment such as routers and switches. We use the Microsoft Visio 2016 tool.
+Logical topology refers to the way signals act on network media or the way data is transmitted over the network from one device to another without taking into account the physical interconnection of the devices. It is often associated with Media Access Control methods and protocols. These topologies can be dynamically reconfigured by special types of equipment, such as routers and switches. I use the Microsoft Visio 2016 tool.
 
 
 
 4. Network floor plan
 
-The floor plan is essential so that we can have the correct basis for carrying out the project, which concerns the physical arrangement of the equipment.
+The floor plan is essential so that I can have the correct basis for carrying out the project, which concerns the physical arrangement of the equipment.
  
 
 5. Addressing table
@@ -130,19 +130,19 @@ Management 30 YES YES S3
 
 7. Scenario
 
-In this project, we will configure an unencrypted GRE VPN point-to-point tunnel and verify that network traffic uses it. We will also configure the OSPF routing protocol inside the GRE VPN tunnel. The GRE tunnel is between the HOME and BRANCH-1 routers in OSPF area 0. ISP-1 is not aware of the GRE tunnel. Communication between the HEADPHONE and BRANCH-1 routers and ISP1 is carried out using standard static routes.
+In this project, I configured an unencrypted GRE VPN point-to-point tunnel and verified that network traffic uses it. I will also configure the OSPF routing protocol inside the GRE VPN tunnel. The GRE tunnel is between the HOME and BRANCH-1 routers in OSPF area 0. ISP-1 is not aware of the GRE tunnel. Communication between the HEADPHONE and BRANCH-1 routers and ISP1 is carried out using standard static routes.
 
 
 8. Task
-Step 1: We wired a network in a similar way to the one in the topology diagram.
-Step 2: We erased all existing settings on the routers.
-Task 2: We performed basic device configurations. We configure the MATRIZ, MATRIZ A, MATRIZ B, and MATRIZ C routers and the S1, S2, S3, S4, S5 and ISP1 and ISP2 switches according to the following guidelines:
+Step 1: I wired a network in a similar way to the one in the topology diagram.
+Step 2: I erased all existing settings on the routers.
+Task 2: I performed basic device configurations. I configure the MATRIZ, MATRIZ A, MATRIZ B, and MATRIZ C routers and the S1, S2, S3, S4, S5 and ISP1 and ISP2 switches according to the following guidelines:
 
-• We configure the hostname on the equipment with the following commands:
+• Configure the hostname on the equipment with the following commands:
 >en
 #conf t
 #hostname [nome do host]
-• We set a password in EXEC mode to "class".
+• Set a password in EXEC mode to "class".
 #enable secret class
 #do wr
 #exit
