@@ -134,6 +134,178 @@ In this project, we will configure an unencrypted GRE VPN point-to-point tunnel 
 
 
 8. Task
+• Configuramos o hostname nos equipamentos com os seguintes comandos:
+>en
+#conf t
+#hostname [nome do host]
+• Configuramos uma senha no modo EXEC como "class".
+#enable secret class
+#do wr
+#exit
+• Configure o seguinte banner de mensagem do dia: “Acesso não autorizado é expressamente proibido e será punido nos termos da lei".
+#conf t
+#service password-encryption 
+#banner motd # Acesso não autorizado é expressamente proibido e será punido nos #termos da lei#  
+#end
+• Configure uma senha para as conexões de console.
+#line console 0
+#password cisco senha
+#login
+#exit
+• Configure o log síncrono.
+#loggin Synchronous
+#exit
+• Configure uma senha para as conexões vty. 
+#line vty 0 15 
+#password cisco
+#login
+• Salve a configuração de execução na NVRAM.
+#do wr
+#exit
+
+Etapa 3: Configurar interfaces
+ETHERNET -> nos PCs
+FASTETHERNET -> nos roteadores e switch
+#interface fa X/X
+#ip add x.x.x.x y.y.y.y
+#no shut down
+SERIAL -> nos roteadores e switch
+#interface sx/x
+#ip address x.x.x.x y.y.y.y
+#no shutdown
+GIGABYTE -> nos roteadores e switch
+#interface gi x/x/x
+#ip address x.x.x.x y.y.y.y
+#no shutdown
+
+• Defina clock rate como 128000 para as interfaces seriais DCE
+#Interface serial x/x/X
+#Clock rate 128000
+•Configurar Spanning Tree Protocol.
+#set spantree root 1
+#set spantree root 10
+#set spantree root 20
+#set spantree root 30
+•Configurar VLANs nos switches FILIAL B e FILIAL C
+#vlan 50
+#name gerenciamento
+#int vlan 50
+#ip add x.x.x.x y.y.y.y
+#no shut
+#exit
+#ip default-gateway x.x.x.x
+#ip name-server x.x.x.x
+
+! criando as VLANs dos departamentos
+
+#vlan 10
+#name Dados
+#vlan 20
+#name Servidores
+#vlan 30
+#name Gestao
+
+! Fazendo a alocacao de portas - membership
+
+#int range fast 0/1 - 15
+#switchport mode access
+#switchport access vlan 10
+#int range fast 0/16 - 20
+#switchport mode access
+#switchport access vlan 20
+#int range fast 0/21 - 24
+#witchport mode access
+#switchport access vlan 30
+•    Configurar o roteamento OSPF nos roteadores Locais
+>en
+#conf t
+#router ospf 1
+#network x.x.x.x m.m.m.m area 0
+#network x.x.x.x m.m.m.m area 0
+#end
+#wr
+•    Aplicar ACL Extendida para negar  pacotes de Internet a Vlan 10
+#conf t
+#access-list 1 deny ip [mascara] [curinga]
+#end
+#wr  
+•    Configurar Túnnel GRE  de Matriz (s0/0/0) à Filial A
+Matriz 
+#conf t
+#interface tunnel 1
+#ip add x.x.x.x y.y.y.y
+#tunnel destination x.x.x.x
+#tunnel source x.x.x.x
+#ip route x.x.x.x y.y.y.y x.x.x.x
+Filial A
+#conf t
+#interface tunnel 1
+#ip add x.x.x.x y.y.y.y
+#tunnel destination x.x.x.x
+#tunnel source x.x.x.x
+#ip route x.x.x.x y.y.y.y x.x.x.x
+Matriz 
+#Conf t
+#Router eigrp 20
+#Network x.x.x.x
+#network x.x.x.x
+#no auto-summary
+Filial A
+#Conf t
+#Router eigrp 20
+#Network x.x.x.x
+#network x.x.x.x
+#no auto-summary
+•    Configurar Túnnel GRE  de FILIAL-A (s0/0/0) à Filial-B
+Filial A
+#conf t
+#interface tunnel 1
+#ip add x.x.x.x y.y.y.y
+#tunnel destination x.x.x.x
+#tunnel source x.x.x.x
+#ip route x.x.x.x y.y.y.y x.x.x.x
+Filial B
+#conf t
+#interface tunnel 1
+#ip add x.x.x.x y.y.y.y
+#tunnel destination x.x.x.x
+#tunnel source x.x.x.x
+#ip route x.x.x.x y.y.y.y x.x.x.x
+Filial A
+#Conf t
+#Router eigrp 20
+#Network x.x.x.x
+#network x.x.x.x
+#no auto-summary
+Filial B
+#Conf t
+#Router eigrp 20
+#Network x.x.x.x
+#network x.x.x.x
+#no auto-summary
+ 
+•    Configurar e verificar a sobrecarga do pool do NAT em MATRIZ 
+#en
+#conf t
+#ip nat pool CCNA4 x.x.x.x x.x.x.x netmask y.y.y.y
+#ip nat inside source list 1 pool CCNA4 overload
+#interface fa0/0
+#ip nat inside
+#no shut
+#exit
+#interface se0/1/0
+ip nat outside
+#no shut
+•    Configurar ACL em Matriz para permitir acesso internet a empresa 
+#access-list 1 permit x.x.x.x
+#int se0/1/0
+#ip access-group 1 out
+#end
+#wr
+•    Configurar DNS e registar os hosts em MATRIZ 
+•    Configure PPPoE de ISP2 a FILIALC
+
+
 
 Step 1: We wired a network in a similar way to the one in the topology diagram.
 Step 2: We erased all existing settings on the routers.
