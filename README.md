@@ -134,59 +134,59 @@ In this project, we will configure an unencrypted GRE VPN point-to-point tunnel 
 
 
 8. Task
-• Configuramos o hostname nos equipamentos com os seguintes comandos:
+• We configure the hostname on the equipment with the following commands:
 >en
 #conf t
 #hostname [nome do host]
-• Configuramos uma senha no modo EXEC como "class".
+• We set a password in EXEC mode to "class".
 #enable secret class
 #do wr
 #exit
-• Configure o seguinte banner de mensagem do dia: “Acesso não autorizado é expressamente proibido e será punido nos termos da lei".
+• Configure the following Message of the Day banner: “Unauthorized access is expressly prohibited and will be punished in accordance with the law.”
 #conf t
 #service password-encryption 
-#banner motd # Acesso não autorizado é expressamente proibido e será punido nos #termos da lei#  
+#banner motd # Unauthorized access is expressly prohibited and will be punished under the law#  
 #end
-• Configure uma senha para as conexões de console.
+• Configure a password for console connections.
 #line console 0
 #password cisco senha
 #login
 #exit
-• Configure o log síncrono.
+• Configure synchronous logging.
 #loggin Synchronous
 #exit
-• Configure uma senha para as conexões vty. 
+• Set a password for vty connections.
 #line vty 0 15 
 #password cisco
 #login
-• Salve a configuração de execução na NVRAM.
+• Save the run configuration to NVRAM.
 #do wr
 #exit
 
-Etapa 3: Configurar interfaces
-ETHERNET -> nos PCs
-FASTETHERNET -> nos roteadores e switch
+Step 3: Configure interfaces
+ETHERNET -> on PCs
+FASTETHERNET -> on routers and switches
 #interface fa X/X
 #ip add x.x.x.x y.y.y.y
 #no shut down
-SERIAL -> nos roteadores e switch
+SERIAL -> on routers and switches
 #interface sx/x
 #ip address x.x.x.x y.y.y.y
 #no shutdown
-GIGABYTE -> nos roteadores e switch
+GIGABYTE -> on routers and switches
 #interface gi x/x/x
 #ip address x.x.x.x y.y.y.y
 #no shutdown
 
-• Defina clock rate como 128000 para as interfaces seriais DCE
+• Set clock rate to 128000 for DCE serial interfaces
 #Interface serial x/x/X
 #Clock rate 128000
-•Configurar Spanning Tree Protocol.
+• Configure Spanning Tree Protocol.
 #set spantree root 1
 #set spantree root 10
 #set spantree root 20
 #set spantree root 30
-•Configurar VLANs nos switches FILIAL B e FILIAL C
+• Configure VLANs on BRANCH B and BRANCH C switches
 #vlan 50
 #name gerenciamento
 #int vlan 50
@@ -196,7 +196,7 @@ GIGABYTE -> nos roteadores e switch
 #ip default-gateway x.x.x.x
 #ip name-server x.x.x.x
 
-! criando as VLANs dos departamentos
+! creating departmental VLANs
 
 #vlan 10
 #name Dados
@@ -205,7 +205,7 @@ GIGABYTE -> nos roteadores e switch
 #vlan 30
 #name Gestao
 
-! Fazendo a alocacao de portas - membership
+! Allocating ports - membership
 
 #int range fast 0/1 - 15
 #switchport mode access
@@ -216,7 +216,7 @@ GIGABYTE -> nos roteadores e switch
 #int range fast 0/21 - 24
 #witchport mode access
 #switchport access vlan 30
-•    Configurar o roteamento OSPF nos roteadores Locais
+•    Configure OSPF Routing on Local Routers
 >en
 #conf t
 #router ospf 1
@@ -224,12 +224,12 @@ GIGABYTE -> nos roteadores e switch
 #network x.x.x.x m.m.m.m area 0
 #end
 #wr
-•    Aplicar ACL Extendida para negar  pacotes de Internet a Vlan 10
+•    Apply Extended ACL to deny Internet packets to Vlan 10
 #conf t
 #access-list 1 deny ip [mascara] [curinga]
 #end
 #wr  
-•    Configurar Túnnel GRE  de Matriz (s0/0/0) à Filial A
+•    Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
 Matriz 
 #conf t
 #interface tunnel 1
@@ -256,7 +256,7 @@ Filial A
 #Network x.x.x.x
 #network x.x.x.x
 #no auto-summary
-•    Configurar Túnnel GRE  de FILIAL-A (s0/0/0) à Filial-B
+•    Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
 Filial A
 #conf t
 #interface tunnel 1
@@ -284,7 +284,7 @@ Filial B
 #network x.x.x.x
 #no auto-summary
  
-•    Configurar e verificar a sobrecarga do pool do NAT em MATRIZ 
+•    Configure and Check NAT Pool Overload in ARRAY
 #en
 #conf t
 #ip nat pool CCNA4 x.x.x.x x.x.x.x netmask y.y.y.y
@@ -296,14 +296,14 @@ Filial B
 #interface se0/1/0
 ip nat outside
 #no shut
-•    Configurar ACL em Matriz para permitir acesso internet a empresa 
+•    Configure ACL on Matrix to allow internet access to the company 
 #access-list 1 permit x.x.x.x
 #int se0/1/0
 #ip access-group 1 out
 #end
 #wr
-•    Configurar DNS e registar os hosts em MATRIZ 
-•    Configure PPPoE de ISP2 a FILIALC
+•    Configure DNS and register hosts in MATRIZ
+•    Configure PPPoE from ISP2 to BRANCH C
 
 
 
