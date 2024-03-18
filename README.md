@@ -79,8 +79,11 @@ The floor plan is essential so that I can have the correct basis for carrying ou
 ![03](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/f399f2e0-4119-4431-93e8-c6ca566332ed)
 
 
+
+
 5. Addressing table
 ![04](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/c1ea62ba-7c10-4926-80c3-adbff74edda9)
+
 
 LAN A, B and C addressing table with IP 172.31.0.0/18
 ![05](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/33c1b4c0-9f9a-4144-8197-e24d36960455)
