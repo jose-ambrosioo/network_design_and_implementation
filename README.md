@@ -76,7 +76,7 @@ Logical topology refers to the way signals act on network media or the way data 
 
 The floor plan is essential so that I can have the correct basis for carrying out the project, which concerns the physical arrangement of the equipment.
 
-![image](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/f399f2e0-4119-4431-93e8-c6ca566332ed)
+![03](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/f399f2e0-4119-4431-93e8-c6ca566332ed)
 
 
 5. Addressing table
