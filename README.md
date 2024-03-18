@@ -284,7 +284,7 @@ Branch B
 #network x.x.x.x
 #no auto-summary
  
-•    Configure and Check NAT Pool Overload in ARRAY
+•    Configure and Check NAT Pool Overload in HEAD OFFICE
 #en
 #conf t
 #ip nat pool CCNA4 x.x.x.x x.x.x.x netmask y.y.y.y
