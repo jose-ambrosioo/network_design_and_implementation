@@ -61,43 +61,31 @@ ISP2:
 3. Physical and logical structure of the network
 3.1 Physical structure
 
-Below, I have a drawing of the network's physical topology that will show us its true appearance or layout. It will represent how the networks are connected and the means of connecting the devices. The cables' connection will influence several critical points, such as flexibility, speed, and security. I use the Microsoft Visio 2016 tool.
- 
+Below is a drawing of the network's physical topology that will show us its true appearance or layout. It will represent how the networks are connected and the means of connecting the devices. The cables' connection will influence several critical points, such as flexibility, speed, and security. I use the Microsoft Visio 2016 tool.
+
+ ![image](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/ac8d99f4-5ecc-416a-b793-963e37ccd18c)
+
 3.1 Logical structure
 
 Logical topology refers to the way signals act on network media or the way data is transmitted over the network from one device to another without taking into account the physical interconnection of the devices. It is often associated with Media Access Control methods and protocols. These topologies can be dynamically reconfigured by special types of equipment, such as routers and switches. I use the Microsoft Visio 2016 tool.
 
+![02](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/c77bd5f2-0a68-437a-b4c1-5792a940de06)
 
 
 4. Network floor plan
 
 The floor plan is essential so that I can have the correct basis for carrying out the project, which concerns the physical arrangement of the equipment.
- 
+
+![image](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/f399f2e0-4119-4431-93e8-c6ca566332ed)
+
 
 5. Addressing table
 Addressing table
-Dispositivo 	Interface 	Endereço IP 	Gateway padrão
-MATRIZ 	G0/1 	172.16.1.1/24 	N/A
-S0/0/0 (DCE) 	10.1.1.1/30 	N/A	
-Tunnel0 	172.16.12.1/30 	N/A	
-ISP1 	S0/0/0 	10.1.1.2/30 	N/A
-S0/0/1 (DCE) 	10.2.2.2/30 	N/A	
-FILIAL-A 	G0/1 	172.16.2.1/24 	N/A
-S0/0/1 	10.2.2.1/30 	N/A	
-Tunnel0 	172.16.12.2/30 	N/A	
-PC-A 	NIC 	172.16.1.3/24 	YES
-PC-C 	NIC 	172.16.2.3/24 	YES
-FILIAL-B	S0/0/0(DCE) 	11.11.1.1/30 	N/A
-G0/1 	DOT1Q 	YES	
-FILIA - C	S0/0/0 	11.11.1.2/30 	N/A
-G0/1 	YES 	N/A	
-IPS2 	G0/1 	YES 	N/A
+![04](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/3d059d3f-4910-4d54-8567-281bb332795c)
 
-Tabela de endereçamento da LAN A, B e C com o IP 172.31.0.0/18
-Dispositivo 	Interface 	Endereço IP 	Mácara de sub-rede	Gateway padrão
-200 host		172.24.0.0/24	255.255.255.0	
-80 host		172.24.1.0/25	255.255.255.8	
-60 host		172.24.1.128/25	255.225.255.8	
+LAN A, B and C addressing table with IP 172.31.0.0/18
+![05](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/33c1b4c0-9f9a-4144-8197-e24d36960455)
+
 
 6. Objective of the activity
 
@@ -111,11 +99,9 @@ Dispositivo 	Interface 	Endereço IP 	Mácara de sub-rede	Gateway padrão
 • Assign cisco as console and vty as password and allow login.
 • Configure Spanning Tree Protocol.
 • Configure VLANs on switches.
-• Create VLANs 10,20 and 30 for the B and C branch networks with the following information
-Designation ID Network Prefix Root Bridge
-Dice 10 YES YES S2
-Servers 20 YES YES S1
-Management 30 YES YES S3
+• Create VLANs 10,20 and 30 for the B and C branch networks with the following information:
+![06](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/3ca179b7-b4ad-4fb3-91ba-3ad0c68d764e)
+
 • Configure OSPF routing on Local routers.
 • Assign an IP address to each loopback using the ID of the respective loopback in the first octet.
 • Apply Extended ACL to deny Internet packets to Vlan 10
