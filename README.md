@@ -1,5 +1,5 @@
-# network_design_and_implementation
-(PUTTY | MICROSFT VISIO)
+<br># network_design_and_implementation
+(CISCO ROUTERS AND SWITCHES | PUTTY | MICROSFT VISIO)
 
 Design and implementation of a company's network project. Equipment: Routers, Switches, PCs, Servers. Implemented settings: GRE VPN, OSPF, hostnames, encrypted password, interfaces, clock rate, login, spanning tree, VLANs, ACL, GRE Tunnel, NAT, DNS, PPPoE, ISP2.
 
@@ -22,50 +22,48 @@ The main office is located in “City Y,” and the branches are in the Technica
 
 **2.1 Company situation**
 
-Situation of the company “before” the implementation of the project:
-Just the head office: 1 Manager, 1 Junior Technician and 1 Assistant.
-Equipment: 3 computers, 1 Internet access via 64 Kbps modem and 2 LaserJet 200dn printers.
-Situation of the company “after” the implementation of the project:
-Headquarters: 2 Senior Technician (IT Administrator), 2 Junior IT Technician, and 2 Operator/WebMaster.
-Branch: 1 Senior Technician(2), 2 Junior Technician, 2 Operator/WebMaster
+<br>Situation of the company “before” the implementation of the project:
+<br>Just the head office: 1 Manager, 1 Junior Technician and 1 Assistant.
+<br>Equipment: 3 computers, 1 Internet access via 64 Kbps modem and 2 LaserJet 200dn printers.
+<br>Situation of the company “after” the implementation of the project:
+<br>Headquarters: 2 Senior Technician (IT Administrator), 2 Junior IT Technician, and 2 Operator/WebMaster.
+<br>Branch: 1 Senior Technician(2), 2 Junior Technician, 2 Operator/WebMaster
 
 **2.2 Purchased Equipment and distribution by equipment**
 
 **- EQUIPMENT ACQUIRED**
-6 C1941 Routers
-4 C2960 Switches
-20 Computers
-1 Server
+<br>6 C1941 Routers
+<br>4 C2960 Switches
+<br>20 Computers
+<br>1 Server
 
 **- DISTRIBUTION BY EQUIPMENT**
 
 **HEADQUARTERS:**
-
-1 C1941 Router
-1 Switch SW2960
-Support for 10 PCs
+<br>1 C1941 Router
+<br>1 Switch SW2960
+<br>Support for 10 PCs
 
 **BRANCH-A:**
-
-1 C1941 Router
-1 Switch C2960
-Support for 20 PCs
+<br>1 C1941 Router
+<br>1 Switch C2960
+<br>Support for 20 PCs
 
 **BRANCH-B:**
-1 C1941 Router
-1 Switch C2960
-Support for 60 PCs
+<br>1 C1941 Router
+<br>1 Switch C2960
+<br>Support for 60 PCs
 
 **BRANCH-C:**
-1 C1941 Router
-1 Switch C2960
-Support for 80 PCs
+<br>1 C1941 Router
+<br>1 Switch C2960
+<br>Support for 80 PCs
 
 **ISP1:**
-1 C1491 Router
+<br>1 C1491 Router
 
 **ISP2:**
-1 C1491 Router
+<br>1 C1491 Router
 
 **3. Physical and logical structure of the network**
 
@@ -98,30 +96,28 @@ LAN A, B and C addressing table with IP 172.31.0.0/18
 
 
 **6. Objective of the activity**
-
-• Configure an unencrypted GRE VPN point-to-point tunnel and verify that network traffic uses the tunnel.
-• Configure the OSPF routing protocol within the GRE VPN tunnel.
-• Configure the hostname.
-• Perform basic configuration tasks on a router.
-• Assign class as the privileged EXEC mode encrypted password
-• Configure and activate interfaces.
-• Set clock rate to 128000 for DCE serial interfaces
-• Assign cisco as console and vty as password and allow login.
-• Configure Spanning Tree Protocol.
-• Configure VLANs on switches.
-• Create VLANs 10,20 and 30 for the B and C branch networks with the following information:
+<br>• Configure an unencrypted GRE VPN point-to-point tunnel and verify that network traffic uses the tunnel.
+<br>• Configure the OSPF routing protocol within the GRE VPN tunnel.
+<br>• Configure the hostname.
+<br>• Perform basic configuration tasks on a router.
+<br>• Assign class as the privileged EXEC mode encrypted password
+<br>• Configure and activate interfaces.
+<br>• Set clock rate to 128000 for DCE serial interfaces
+<br>• Assign cisco as console and vty as password and allow login.
+<br>• Configure Spanning Tree Protocol.
+<br>• Configure VLANs on switches.
+<br>• Create VLANs 10,20 and 30 for the B and C branch networks with the following information:
 ![06](https://github.com/jose-ambrosioo/network_design_and_implementation/assets/59221796/3ca179b7-b4ad-4fb3-91ba-3ad0c68d764e)
 
-• Configure OSPF routing on Local routers.
-• Assign an IP address to each loopback using the ID of the respective loopback in the first octet.
-• Apply Extended ACL to deny Internet packets to Vlan 10
-• Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
-• Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
-• Configure and check NAT pool overload in MATRIZ
-• Configure ACL on Matrix to allow internet access to the company
-• Configure DNS and register hosts in MATRIZ
-• Configure PPPoE from ISP2 to BRANCH
-
+<br>• Configure OSPF routing on Local routers.
+<br>• Assign an IP address to each loopback using the ID of the respective loopback in the first octet.
+<br>• Apply Extended ACL to deny Internet packets to Vlan 10
+<br>• Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
+<br>• Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
+<br>• Configure and check NAT pool overload in MATRIZ
+<br>• Configure ACL on Matrix to allow internet access to the company
+<br>• Configure DNS and register hosts in MATRIZ
+<br>• Configure PPPoE from ISP2 to BRANCH
 
 
 **7. Scenario**
@@ -135,176 +131,176 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 
 **Step 2: I erased all existing settings on the routers.**
 
-Task 2: I performed basic device configurations. I configure the MATRIZ, MATRIZ A, MATRIZ B, and MATRIZ C routers and the S1, S2, S3, S4, S5 and ISP1 and ISP2 switches according to the following guidelines:
+**Step 3: I performed basic device configurations. I configure the HEAD OFFICE, BRANCH A, BRANCH B, and BRANCH C routers and the S1, S2, S3, S4, S5 and ISP1 and ISP2 switches according to the following guidelines:**
 
-• Configure the hostname on the equipment with the following commands:
->en
-#conf t
-#hostname [nome do host]
-• Set a password in EXEC mode to "class".
-#enable secret class
-#do wr
-#exit
-• Configure the following Message of the Day banner: “Unauthorized access is expressly prohibited and will be punished in accordance with the law.”
-#conf t
-#service password-encryption 
-#banner motd # Unauthorized access is expressly prohibited and will be punished under the law#  
-#end
-• Configure a password for console connections.
-#line console 0
-#password cisco senha
-#login
-#exit
-• Configure synchronous logging.
-#loggin Synchronous
-#exit
-• Set a password for vty connections.
-#line vty 0 15 
-#password cisco
-#login
-• Save the run configuration to NVRAM.
-#do wr
-#exit
+<br>• Configure the hostname on the equipment with the following commands:
+<br>>en
+<br>#conf t
+<br>#hostname [nome do host]
+<br>• Set a password in EXEC mode to "class".
+<br>#enable secret class
+<br>#do wr
+<br>#exit
+<br>• Configure the following Message of the Day banner: “Unauthorized access is expressly prohibited and will be punished in accordance with the law.”
+<br>#conf t
+<br>#service password-encryption 
+<br>#banner motd <br># Unauthorized access is expressly prohibited and will be punished under the law<br>#  
+<br>#end
+<br>• Configure a password for console connections.
+<br>#line console 0
+<br>#password cisco senha
+<br>#login
+<br>#exit
+<br>• Configure synchronous logging.
+<br>#loggin Synchronous
+<br>#exit
+<br>• Set a password for vty connections.
+<br>#line vty 0 15 
+<br>#password cisco
+<br>#login
+<br>• Save the run configuration to NVRAM.
+<br>#do wr
+<br>#exit
 
-**Step 3: Configure interfaces**
+**Step 4: Configure interfaces**
 
-ETHERNET -> on PCs
-FASTETHERNET -> on routers and switches
-#interface fa X/X
-#ip add x.x.x.x y.y.y.y
-#no shut down
-SERIAL -> on routers and switches
-#interface sx/x
-#ip address x.x.x.x y.y.y.y
-#no shutdown
-GIGABYTE -> on routers and switches
-#interface gi x/x/x
-#ip address x.x.x.x y.y.y.y
-#no shutdown
+<br>ETHERNET -> on PCs
+<br>FASTETHERNET -> on routers and switches
+<br>#interface fa X/X
+<br>#ip add x.x.x.x y.y.y.y
+<br>#no shut down
+<br>SERIAL -> on routers and switches
+<br>#interface sx/x
+<br>#ip address x.x.x.x y.y.y.y
+<br>#no shutdown
+<br>GIGABYTE -> on routers and switches
+<br>#interface gi x/x/x
+<br>#ip address x.x.x.x y.y.y.y
+<br>#no shutdown
 
-• Set clock rate to 128000 for DCE serial interfaces
-#Interface serial x/x/X
-#Clock rate 128000
-• Configure Spanning Tree Protocol.
-#set spantree root 1
-#set spantree root 10
-#set spantree root 20
-#set spantree root 30
-• Configure VLANs on BRANCH B and BRANCH C switches
-#vlan 50
-#name gerenciamento
-#int vlan 50
-#ip add x.x.x.x y.y.y.y
-#no shut
-#exit
-#ip default-gateway x.x.x.x
-#ip name-server x.x.x.x
+<br>• Set clock rate to 128000 for DCE serial interfaces
+<br>#Interface serial x/x/X
+<br>#Clock rate 128000
+<br>• Configure Spanning Tree Protocol.
+<br>#set spantree root 1
+<br>#set spantree root 10
+<br>#set spantree root 20
+<br>#set spantree root 30
+<br>• Configure VLANs on BRANCH B and BRANCH C switches
+<br>#vlan 50
+<br>#name gerenciamento
+<br>#int vlan 50
+<br>#ip add x.x.x.x y.y.y.y
+<br>#no shut
+<br>#exit
+<br>#ip default-gateway x.x.x.x
+<br>#ip name-server x.x.x.x
 
 ! creating departmental VLANs
 
-#vlan 10
-#name Dados
-#vlan 20
-#name Servidores
-#vlan 30
-#name Gestao
+<br>#vlan 10
+<br>#name Dados
+<br>#vlan 20
+<br>#name Servidores
+<br>#vlan 30
+<br>#name Gestao
 
 ! Allocating ports - membership
 
-#int range fast 0/1 - 15
-#switchport mode access
-#switchport access vlan 10
-#int range fast 0/16 - 20
-#switchport mode access
-#switchport access vlan 20
-#int range fast 0/21 - 24
-#witchport mode access
-#switchport access vlan 30
-•    Configure OSPF Routing on Local Routers
+<br>#int range fast 0/1 - 15
+<br>#switchport mode access
+<br>#switchport access vlan 10
+<br>#int range fast 0/16 - 20
+<br>#switchport mode access
+<br>#switchport access vlan 20
+<br>#int range fast 0/21 - 24
+<br>#witchport mode access
+<br>#switchport access vlan 30
+<br>•    Configure OSPF Routing on Local Routers
 >en
-#conf t
-#router ospf 1
-#network x.x.x.x m.m.m.m area 0
-#network x.x.x.x m.m.m.m area 0
-#end
-#wr
-•    Apply Extended ACL to deny Internet packets to Vlan 10
-#conf t
-#access-list 1 deny ip [mascara] [curinga]
-#end
-#wr  
-•    Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
-Head Office 
-#conf t
-#interface tunnel 1
-#ip add x.x.x.x y.y.y.y
-#tunnel destination x.x.x.x
-#tunnel source x.x.x.x
-#ip route x.x.x.x y.y.y.y x.x.x.x
-Branch A
-#conf t
-#interface tunnel 1
-#ip add x.x.x.x y.y.y.y
-#tunnel destination x.x.x.x
-#tunnel source x.x.x.x
-#ip route x.x.x.x y.y.y.y x.x.x.x
-Head Office 
-#Conf t
-#Router eigrp 20
-#Network x.x.x.x
-#network x.x.x.x
-#no auto-summary
-Branch A
-#Conf t
-#Router eigrp 20
-#Network x.x.x.x
-#network x.x.x.x
-#no auto-summary
-•    Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
-Branch A
-#conf t
-#interface tunnel 1
-#ip add x.x.x.x y.y.y.y
-#tunnel destination x.x.x.x
-#tunnel source x.x.x.x
-#ip route x.x.x.x y.y.y.y x.x.x.x
-Branch B
-#conf t
-#interface tunnel 1
-#ip add x.x.x.x y.y.y.y
-#tunnel destination x.x.x.x
-#tunnel source x.x.x.x
-#ip route x.x.x.x y.y.y.y x.x.x.x
-Branch A
-#Conf t
-#Router eigrp 20
-#Network x.x.x.x
-#network x.x.x.x
-#no auto-summary
-Branch B
-#Conf t
-#Router eigrp 20
-#Network x.x.x.x
-#network x.x.x.x
-#no auto-summary
+<br>#conf t
+<br>#router ospf 1
+<br>#network x.x.x.x m.m.m.m area 0
+<br>#network x.x.x.x m.m.m.m area 0
+<br>#end
+<br>#wr
+<br>•    Apply Extended ACL to deny Internet packets to Vlan 10
+<br>#conf t
+<br>#access-list 1 deny ip [mascara] [curinga]
+<br>#end
+<br>#wr  
+<br>•    Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
+<br>Head Office 
+<br>#conf t
+<br>#interface tunnel 1
+<br>#ip add x.x.x.x y.y.y.y
+<br>#tunnel destination x.x.x.x
+<br>#tunnel source x.x.x.x
+<br>#ip route x.x.x.x y.y.y.y x.x.x.x
+<br>Branch A
+<br>#conf t
+<br>#interface tunnel 1
+<br>#ip add x.x.x.x y.y.y.y
+<br>#tunnel destination x.x.x.x
+<br>#tunnel source x.x.x.x
+<br>#ip route x.x.x.x y.y.y.y x.x.x.x
+<br>Head Office 
+<br>#Conf t
+<br>#Router eigrp 20
+<br>#Network x.x.x.x
+<br>#network x.x.x.x
+<br>#no auto-summary
+<br>Branch A
+<br>#Conf t
+<br>#Router eigrp 20
+<br>#Network x.x.x.x
+<br>#network x.x.x.x
+<br>#no auto-summary
+<br>•    Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
+<br>Branch A
+<br>#conf t
+<br>#interface tunnel 1
+<br>#ip add x.x.x.x y.y.y.y
+<br>#tunnel destination x.x.x.x
+<br>#tunnel source x.x.x.x
+<br>#ip route x.x.x.x y.y.y.y x.x.x.x
+<br>Branch B
+<br>#conf t
+<br>#interface tunnel 1
+<br>#ip add x.x.x.x y.y.y.y
+<br>#tunnel destination x.x.x.x
+<br>#tunnel source x.x.x.x
+<br>#ip route x.x.x.x y.y.y.y x.x.x.x
+<br>Branch A
+<br>#Conf t
+<br>#Router eigrp 20
+<br>#Network x.x.x.x
+<br>#network x.x.x.x
+<br>#no auto-summary
+<br>Branch B
+<br>#Conf t
+<br>#Router eigrp 20
+<br>#Network x.x.x.x
+<br>#network x.x.x.x
+<br>#no auto-summary
  
-•    Configure and Check NAT Pool Overload in HEAD OFFICE
-#en
-#conf t
-#ip nat pool CCNA4 x.x.x.x x.x.x.x netmask y.y.y.y
-#ip nat inside source list 1 pool CCNA4 overload
-#interface fa0/0
-#ip nat inside
-#no shut
-#exit
-#interface se0/1/0
-ip nat outside
-#no shut
-•    Configure ACL on Matrix to allow internet access to the company 
-#access-list 1 permit x.x.x.x
-#int se0/1/0
-#ip access-group 1 out
-#end
-#wr
-•    Configure DNS and register hosts in MATRIZ
-•    Configure PPPoE from ISP2 to BRANCH C
+<br>•    Configure and Check NAT Pool Overload in HEAD OFFICE
+<br>#en
+<br>#conf t
+<br>#ip nat pool CCNA4 x.x.x.x x.x.x.x netmask y.y.y.y
+<br>#ip nat inside source list 1 pool CCNA4 overload
+<br>#interface fa0/0
+<br>#ip nat inside
+<br>#no shut
+<br>#exit
+<br>#interface se0/1/0
+<br>ip nat outside
+<br>#no shut
+<br>•    Configure ACL on Matrix to allow internet access to the company 
+<br>#access-list 1 permit x.x.x.x
+<br>#int se0/1/0
+<br>#ip access-group 1 out
+<br>#end
+<br>#wr
+<br>•    Configure DNS and register hosts in MATRIZ
+<br>•    Configure PPPoE from ISP2 to BRANCH C
