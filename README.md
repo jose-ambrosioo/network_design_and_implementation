@@ -36,26 +36,35 @@ Branch: 1 Senior Technician(2), 2 Junior Technician, 2 Operator/WebMaster
 4 C2960 Switches
 20 Computers
 1 Server
+
 **- DISTRIBUTION BY EQUIPMENT**
-HEADQUARTERS:
+
+**HEADQUARTERS:**
+
 1 C1941 Router
 1 Switch SW2960
 Support for 10 PCs
-BRANCH-A:
+
+**BRANCH-A:**
+
 1 C1941 Router
 1 Switch C2960
 Support for 20 PCs
-BRANCH-B:
+
+**BRANCH-B:**
 1 C1941 Router
 1 Switch C2960
 Support for 60 PCs
-BRANCH-C:
+
+**BRANCH-C:**
 1 C1941 Router
 1 Switch C2960
 Support for 80 PCs
-ISP1:
+
+**ISP1:**
 1 C1491 Router
-ISP2:
+
+**ISP2:**
 1 C1491 Router
 
 **3. Physical and logical structure of the network**
