@@ -21,7 +21,6 @@ The company's Management requested a project to implement tunnels between branch
 The main office is located in “City Y,” and the branches are in the Technical Administrative Center of “City X.” Based on this information, the proposal for implementing the “TELECOM Project 2018” was presented as follows.
 
 **2.1 Company situation**
-
 <br>Situation of the company “before” the implementation of the project:
 <br>Just the head office: 1 Manager, 1 Junior Technician and 1 Assistant.
 <br>Equipment: 3 computers, 1 Internet access via 64 Kbps modem and 2 LaserJet 200dn printers.
