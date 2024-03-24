@@ -201,7 +201,6 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#ip name-server x.x.x.x
 
 ! creating departmental VLANs
-
 <br>#vlan 10
 <br>#name Dados
 <br>#vlan 20
@@ -210,7 +209,6 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#name Gestao
 
 ! Allocating ports - membership
-
 <br>#int range fast 0/1 - 15
 <br>#switchport mode access
 <br>#switchport access vlan 10
