@@ -141,16 +141,19 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#enable secret class
 <br>#do wr
 <br>#exit
+
 <br>• Configure the following Message of the Day banner: “Unauthorized access is expressly prohibited and will be punished in accordance with the law.”
 <br>#conf t
 <br>#service password-encryption 
 <br>#banner motd <br># Unauthorized access is expressly prohibited and will be punished under the law<br>#  
 <br>#end
+
 <br>• Configure a password for console connections.
 <br>#line console 0
 <br>#password cisco senha
 <br>#login
 <br>#exit
+
 <br>• Configure synchronous logging.
 <br>#loggin Synchronous
 <br>#exit
@@ -181,11 +184,13 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>• Set clock rate to 128000 for DCE serial interfaces
 <br>#Interface serial x/x/X
 <br>#Clock rate 128000
+
 <br>• Configure Spanning Tree Protocol.
 <br>#set spantree root 1
 <br>#set spantree root 10
 <br>#set spantree root 20
 <br>#set spantree root 30
+
 <br>• Configure VLANs on BRANCH B and BRANCH C switches
 <br>#vlan 50
 <br>#name gerenciamento
@@ -216,6 +221,7 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#int range fast 0/21 - 24
 <br>#witchport mode access
 <br>#switchport access vlan 30
+
 <br>•    Configure OSPF Routing on Local Routers
 >en
 <br>#conf t
@@ -228,7 +234,8 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#conf t
 <br>#access-list 1 deny ip [mascara] [curinga]
 <br>#end
-<br>#wr  
+<br>#wr
+
 <br>•    Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
 <br>Head Office 
 <br>#conf t
@@ -256,6 +263,7 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#Network x.x.x.x
 <br>#network x.x.x.x
 <br>#no auto-summary
+
 <br>•    Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
 <br>Branch A
 <br>#conf t
@@ -296,11 +304,14 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#interface se0/1/0
 <br>ip nat outside
 <br>#no shut
+
 <br>•    Configure ACL on Matrix to allow internet access to the company 
 <br>#access-list 1 permit x.x.x.x
 <br>#int se0/1/0
 <br>#ip access-group 1 out
 <br>#end
 <br>#wr
+
 <br>•    Configure DNS and register hosts in MATRIZ
+
 <br>•    Configure PPPoE from ISP2 to BRANCH C
