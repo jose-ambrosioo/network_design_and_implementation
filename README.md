@@ -7,7 +7,6 @@ Design and implementation of a company's network project. Equipment: Routers, Sw
 
 In this project, a commercial company in the car sales sector needed to expand. The headquarters and three branches needed to be computerized and interconnected via the Internet.
 
-
 **2. Description**
 
 The office, which previously had only the head office consisting of a sales station, with one manager, one cashier assistant and one junior IT technician, had only three computers with two Deskjet printers and single Internet access via dial-up line ( 256 Kbps), now consists of a head office and three branches.
@@ -132,7 +131,7 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 
 **Step 3: I performed basic device configurations. I configure the HEAD OFFICE, BRANCH A, BRANCH B, and BRANCH C routers and the S1, S2, S3, S4, S5 and ISP1 and ISP2 switches according to the following guidelines:**
 
-<br>• Configure the hostname on the equipment with the following commands:
+• Configure the hostname on the equipment with the following commands:
 <br>>en
 <br>#conf t
 <br>#hostname [nome do host]
@@ -141,19 +140,19 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#do wr
 <br>#exit
 
-<br>• Configure the following Message of the Day banner: “Unauthorized access is expressly prohibited and will be punished in accordance with the law.”
+• Configure the following Message of the Day banner: “Unauthorized access is expressly prohibited and will be punished in accordance with the law.”
 <br>#conf t
 <br>#service password-encryption 
 <br>#banner motd <br># Unauthorized access is expressly prohibited and will be punished under the law<br>#  
 <br>#end
 
-<br>• Configure a password for console connections.
+• Configure a password for console connections.
 <br>#line console 0
 <br>#password cisco senha
 <br>#login
 <br>#exit
 
-<br>• Configure synchronous logging.
+• Configure synchronous logging.
 <br>#loggin Synchronous
 <br>#exit
 <br>• Set a password for vty connections.
@@ -166,7 +165,7 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 
 **Step 4: Configure interfaces**
 
-<br>ETHERNET -> on PCs
+ETHERNET -> on PCs
 <br>FASTETHERNET -> on routers and switches
 <br>#interface fa X/X
 <br>#ip add x.x.x.x y.y.y.y
@@ -180,17 +179,17 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#ip address x.x.x.x y.y.y.y
 <br>#no shutdown
 
-<br>• Set clock rate to 128000 for DCE serial interfaces
+• Set clock rate to 128000 for DCE serial interfaces
 <br>#Interface serial x/x/X
 <br>#Clock rate 128000
 
-<br>• Configure Spanning Tree Protocol.
+• Configure Spanning Tree Protocol.
 <br>#set spantree root 1
 <br>#set spantree root 10
 <br>#set spantree root 20
 <br>#set spantree root 30
 
-<br>• Configure VLANs on BRANCH B and BRANCH C switches
+• Configure VLANs on BRANCH B and BRANCH C switches
 <br>#vlan 50
 <br>#name gerenciamento
 <br>#int vlan 50
@@ -219,7 +218,7 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#witchport mode access
 <br>#switchport access vlan 30
 
-<br>•    Configure OSPF Routing on Local Routers
+•    Configure OSPF Routing on Local Routers
 >en
 <br>#conf t
 <br>#router ospf 1
@@ -227,13 +226,14 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#network x.x.x.x m.m.m.m area 0
 <br>#end
 <br>#wr
-<br>•    Apply Extended ACL to deny Internet packets to Vlan 10
+
+•    Apply Extended ACL to deny Internet packets to Vlan 10
 <br>#conf t
 <br>#access-list 1 deny ip [mascara] [curinga]
 <br>#end
 <br>#wr
 
-<br>•    Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
+•    Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
 <br>Head Office 
 <br>#conf t
 <br>#interface tunnel 1
@@ -261,7 +261,7 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#network x.x.x.x
 <br>#no auto-summary
 
-<br>•    Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
+•    Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
 <br>Branch A
 <br>#conf t
 <br>#interface tunnel 1
@@ -289,7 +289,7 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>#network x.x.x.x
 <br>#no auto-summary
  
-<br>•    Configure and Check NAT Pool Overload in HEAD OFFICE
+•    Configure and Check NAT Pool Overload in HEAD OFFICE
 <br>#en
 <br>#conf t
 <br>#ip nat pool CCNA4 x.x.x.x x.x.x.x netmask y.y.y.y
@@ -302,13 +302,13 @@ In this project, I configured an unencrypted GRE VPN point-to-point tunnel and v
 <br>ip nat outside
 <br>#no shut
 
-<br>•    Configure ACL on Matrix to allow internet access to the company 
+•    Configure ACL on Matrix to allow internet access to the company 
 <br>#access-list 1 permit x.x.x.x
 <br>#int se0/1/0
 <br>#ip access-group 1 out
 <br>#end
 <br>#wr
 
-<br>•    Configure DNS and register hosts in MATRIZ
+•    Configure DNS and register hosts in MATRIZ
 
-<br>•    Configure PPPoE from ISP2 to BRANCH C
+•    Configure PPPoE from ISP2 to BRANCH C
