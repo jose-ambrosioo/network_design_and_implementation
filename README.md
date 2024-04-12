@@ -112,9 +112,9 @@ LAN A, B and C addressing table with IP 172.31.0.0/18
 <br>• Apply Extended ACL to deny Internet packets to Vlan 10
 <br>• Configure GRE Tunnel from Headquarters (s0/0/0) to Branch A
 <br>• Configure GRE Tunnel from BRANCH-A (s0/0/0) to Branch-B
-<br>• Configure and check NAT pool overload in MATRIZ
+<br>• Configure and check NAT pool overload in Headquarters/MATRIZ
 <br>• Configure ACL on Matrix to allow internet access to the company
-<br>• Configure DNS and register hosts in MATRIZ
+<br>• Configure DNS and register hosts in Headquarters/MATRIZ
 <br>• Configure PPPoE from ISP2 to BRANCH
 
 
@@ -309,6 +309,6 @@ ETHERNET -> on PCs
 <br>#end
 <br>#wr
 
-•    Configure DNS and register hosts in MATRIZ
+•    Configure DNS and register hosts in Headquarters/MATRIZ
 
 •    Configure PPPoE from ISP2 to BRANCH C
